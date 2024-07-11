@@ -1,0 +1,12 @@
+:root {
+  --maga-color: red;
+
+  font-family: serif;
+}
+
+/* Selects all divs, but not in shadow doms*/
+div {
+  background-color: green;
+  font-size: 20px;
+  color: white;
+}
