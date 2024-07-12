@@ -1,6 +1,5 @@
 // @ts-ignore
-class warmCapitalizer extends HTMLElement
-{
+class WarmCapitalizer extends HTMLElement {
   constructor() {
     super();
 
@@ -9,7 +8,7 @@ class warmCapitalizer extends HTMLElement
 
   get root() {
     let shadowRoot = this.shadowRoot;
-    if (shadowRoot == null) {
+    if (!shadowRoot) {
       // Create shadow root for current element
       shadowRoot = this.attachShadow({mode: 'open'});
       // mode controls if this.shadowRoot is set
@@ -50,4 +49,4 @@ class warmCapitalizer extends HTMLElement
   }
 }
 
-customElements.define('warm-capitalizer', warmCapitalizer);
+customElements.define('warm-capitalizer', WarmCapitalizer);

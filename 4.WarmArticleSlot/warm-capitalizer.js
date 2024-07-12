@@ -1,5 +1,5 @@
 // @ts-ignore
-class warmCapitalizer extends HTMLElement
+class WarmCapitalizer extends HTMLElement
 {
   constructor() {
     super();
@@ -56,4 +56,4 @@ class warmCapitalizer extends HTMLElement
   }
 }
 
-customElements.define('warm-capitalizer', warmCapitalizer);
+customElements.define('warm-capitalizer', WarmCapitalizer);

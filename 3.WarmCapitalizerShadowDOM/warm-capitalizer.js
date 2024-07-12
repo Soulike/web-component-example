@@ -1,5 +1,5 @@
 // @ts-ignore
-class warmCapitalizer extends HTMLElement
+class WarmCapitalizer extends HTMLElement
 {
   constructor() {
     super();

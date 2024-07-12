@@ -1,7 +1,8 @@
 // @ts-ignore
-class warmCapitalizer extends HTMLElement {
+class WarmCapitalizer extends HTMLElement {
   constructor() {
     super();
+    
   }
 
   /* Life Cycles */
@@ -19,6 +20,11 @@ class warmCapitalizer extends HTMLElement {
     console.log('Custom element moved to new document.');
   }
 
+  static get observedAttributes() {
+    return ['attribute1', 'attribute2'];
+  }
+
+
   attributeChangedCallback(name, oldValue, newValue) {
     console.log(`Attribute ${name} has changed.`);
   }
@@ -28,7 +34,7 @@ class warmCapitalizer extends HTMLElement {
       .warm-capitalizer {
         font-size: xx-large;
         font-weight: bold;
-        color: red;
+        color: ${this.getAttribute('color')};
       }
     `;
 
@@ -37,7 +43,9 @@ class warmCapitalizer extends HTMLElement {
     this.appendChild(style);
   }
 
-  #setup() {
+  #setup()
+  {
+    console.log(this.getAttribute('hello'));
     const text = this.innerText;
     this.innerHTML = '';
 
@@ -52,4 +60,4 @@ class warmCapitalizer extends HTMLElement {
   }
 }
 
-customElements.define('warm-capitalizer', warmCapitalizer);
+customElements.define('warm-capitalizer', WarmCapitalizer);

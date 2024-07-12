@@ -1,19 +1,23 @@
 // @ts-ignore
-class WarmArticle extends HTMLElement
-{
+class WarmArticle extends HTMLElement {
+  #shadowRoot;
+
   constructor() {
     super();
     this.#setup();
+    this.#shadowRoot = null;
   }
 
   get root() {
-    let shadowRoot = this.shadowRoot;
-    if (!shadowRoot) {
-      // Create shadow root for current element
-      shadowRoot = this.attachShadow({mode: 'open'});
-      // mode controls if outside can access shadow dom by this.shadowRoot
+    if (!this.#shadowRoot) {
+      this.#shadowRoot = this.shadowRoot;
+      if (!this.#shadowRoot) {
+        // Create shadow root for current element
+        this.#shadowRoot = this.attachShadow({mode: 'closed'});
+        // mode controls if outside can access shadow dom by this.shadowRoot
+      }
     }
-    return shadowRoot;
+    return this.#shadowRoot;
   }
 
   #setupStyle() {
@@ -33,8 +37,7 @@ class WarmArticle extends HTMLElement
     this.root.appendChild(style);
   }
 
-  #setup()
-  {
+  #setup() {
     this.#setupStyle();
 
     /*
