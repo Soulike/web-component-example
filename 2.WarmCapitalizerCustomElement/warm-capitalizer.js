@@ -1,3 +1,4 @@
+// @ts-ignore
 class warmCapitalizer extends HTMLElement {
   constructor() {
     super();
@@ -37,7 +38,9 @@ class warmCapitalizer extends HTMLElement {
   }
 
   #setup() {
-    const text = 'hello world';
+    const text = this.innerText;
+    this.innerHTML = '';
+
     // You can manipulate DOM inside the custom element
     const div = document.createElement('div');
     div.classList.add('warm-capitalizer');

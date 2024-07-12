@@ -1,21 +1,18 @@
-class warmCapitalizer extends HTMLElement {
+// @ts-ignore
+class warmCapitalizer extends HTMLElement
+{
   constructor() {
     super();
-  }
 
-  /* Life Cycles */
-
-  connectedCallback() {
-    console.log('Custom element added to document.');
     this.#setup();
   }
 
   get root() {
     let shadowRoot = this.shadowRoot;
-    if (!shadowRoot) {
+    if (shadowRoot == null) {
       // Create shadow root for current element
       shadowRoot = this.attachShadow({mode: 'open'});
-      // mode controls if outside can access shadow dom by this.shadowRoot
+      // mode controls if this.shadowRoot is set
     }
     return shadowRoot;
   }

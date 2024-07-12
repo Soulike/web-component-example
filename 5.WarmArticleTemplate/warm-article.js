@@ -8,6 +8,7 @@ function html(htmlString) {
   return template.content;
 }
 
+// @ts-ignore
 class WarmArticle extends HTMLElement {
   constructor() {
     super();

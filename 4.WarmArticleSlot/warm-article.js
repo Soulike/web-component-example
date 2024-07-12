@@ -1,4 +1,6 @@
-class WarmArticle extends HTMLElement {
+// @ts-ignore
+class WarmArticle extends HTMLElement
+{
   constructor() {
     super();
     this.#setup();
