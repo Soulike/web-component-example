@@ -1,4 +1,4 @@
-class MagaCapitalizer extends HTMLElement {
+class warmCapitalizer extends HTMLElement {
   constructor() {
     super();
   }
@@ -22,16 +22,14 @@ class MagaCapitalizer extends HTMLElement {
 
   #setupStyle() {
     const styles = `
-      /*:host always selects hosting element. In this case, maga-capitalizer*/
       :host {
         display: block;
-        background-color: lightgray;
       }
 
-      .maga-capitalizer {
+      .warm-capitalizer {
         font-size: xx-large;
         font-weight: bold;
-        color: var(--maga-color); /* CSS custom properties can passthrough shadow dom */
+        color: var(red);
       }
     `;
 
@@ -44,9 +42,9 @@ class MagaCapitalizer extends HTMLElement {
   #setup() {
     // You can manipulate DOM inside the custom element
 
-    const text = 'make america great again';
+    const text = 'hello world';
     const div = document.createElement('div');
-    div.classList.add('maga-capitalizer');
+    div.classList.add('warm-capitalizer');
     div.innerText = text.toUpperCase() + '!!!';
 
     this.#setupStyle();
@@ -55,4 +53,4 @@ class MagaCapitalizer extends HTMLElement {
   }
 }
 
-customElements.define('maga-capitalizer', MagaCapitalizer);
+customElements.define('warm-capitalizer', warmCapitalizer);

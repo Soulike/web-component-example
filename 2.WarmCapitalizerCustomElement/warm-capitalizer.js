@@ -1,5 +1,4 @@
-class MagaCapitalizer extends HTMLElement
-{
+class warmCapitalizer extends HTMLElement {
   constructor() {
     super();
   }
@@ -25,7 +24,7 @@ class MagaCapitalizer extends HTMLElement
 
   #setupStyle() {
     const styles = `
-      .maga-capitalizer {
+      .warm-capitalizer {
         font-size: xx-large;
         font-weight: bold;
         color: red;
@@ -38,10 +37,10 @@ class MagaCapitalizer extends HTMLElement
   }
 
   #setup() {
-    const text = 'make america great again';
+    const text = 'hello world';
     // You can manipulate DOM inside the custom element
     const div = document.createElement('div');
-    div.classList.add('maga-capitalizer');
+    div.classList.add('warm-capitalizer');
     div.innerText = text.toUpperCase() + '!!!';
 
     // Use this to access self
@@ -50,4 +49,4 @@ class MagaCapitalizer extends HTMLElement
   }
 }
 
-customElements.define('maga-capitalizer', MagaCapitalizer);
+customElements.define('warm-capitalizer', warmCapitalizer);
